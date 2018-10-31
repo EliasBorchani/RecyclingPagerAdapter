@@ -38,24 +38,15 @@ repositories {
     mavenCentral()
 }
 
-publish {
-    userOrg = 'mxco'
-    groupId = 'com.mxco.recyclingviewpager'
-    artifactId = 'bintray-release'
-    publishVersion = '0.1.0'
-    desc = 'Adapter destined to ViewPager for recycling views. Improve the performance of your app the clean way !'
-    website = 'https://github.com/novoda/bintray-release'
-}
-
 ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'recyclingviewpager'
+    bintrayRepo = 'MxCo'
+    bintrayName = 'RecyclingPagerAdapter'
 
     publishedGroupId = 'com.mxco'
-    libraryName = 'DiagonalScrollView'
-    artifact = 'diagonalscrollview'
+    libraryName = 'RecyclingPagerAdapter'
+    artifact = 'recyclingpageradapter'
 
-    libraryDescription = 'This view is a container that supports diagonal scroll and fling gesture. It is based on AOSP HorizontalScrollView.'
+    libraryDescription = 'Adapter destined to ViewPager for recycling views. Improve the performance of your app the clean way !'
 
     siteUrl = 'https://github.com/EliasBorchani/RecyclingPagerAdapter'
     gitUrl = 'https://github.com/EliasBorchani/RecyclingPagerAdapter.git'
@@ -70,3 +61,5 @@ ext {
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
     allLicenses = ["Apache-2.0"]
 }
+
+apply from: '../gradle/bintray.gradle'
