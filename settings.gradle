@@ -1,1 +1,1 @@
-include ':app', ':recyclingviewpager'
+include ':app', ':recyclingpageradapter'
