@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/headerBackground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/colorAccent" />
+
+        <ImageView
+            android:id="@+id/headerImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:contentDescription="@string/headerImageDescription"
+            app:layout_constraintBottom_toBottomOf="@id/headerBackground"
+            app:layout_constraintLeft_toLeftOf="@id/headerBackground"
+            app:layout_constraintRight_toRightOf="@id/headerBackground"
+            app:layout_constraintTop_toTopOf="@id/headerBackground"
+            tools:src="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/iconImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="30dp"
+            android:contentDescription="@string/iconImageDescription"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerBackground"
+            app:layout_constraintBottom_toTopOf="@+id/titleHorizontalBarrier"/>
+
+        <TextView
+            android:id="@+id/appRating"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center"
+            android:maxLines="1"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="@id/iconImage"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iconImage"
+            tools:text="4,5" />
+
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:maxLines="1"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toRightOf="@id/iconImage"
+            app:layout_constraintRight_toLeftOf="@id/appRating"
+            app:layout_constraintTop_toTopOf="@id/iconImage"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/authorDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toRightOf="@id/iconImage"
+            app:layout_constraintRight_toLeftOf="@id/appRating"
+            app:layout_constraintTop_toBottomOf="@id/appTitle"
+            tools:text="well\nwell\nwell\nwell\nwell" />
+
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/titleHorizontalBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="iconImage, authorDescription, appRating" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleHorizontalBarrier" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            tools:listitem="@layout/viewholder_application_rating" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

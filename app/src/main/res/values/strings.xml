@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">Recycling View Pager</string>
+    <string name="app_name">Recycling View Pager Example</string>
+
+    <string name="fullscreenImageDescription">fullscreen image</string>
+    <string name="raterImageDescription">rater image</string>
+    <string name="headerImageDescription">application header image</string>
+    <string name="iconImageDescription">application icon</string>
+
+    <string name="app_name_0">Random App</string>
+    <string name="app_name_1">What is it</string>
+    <string name="app_name_2">Mysterious App</string>
+    <string name="app_description_0">Wait…</string>
+    <string name="app_description_1">Wait…</string>
+    <string name="app_description_2">Wait…</string>
 </resources>
